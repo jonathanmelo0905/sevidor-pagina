@@ -2,15 +2,17 @@ import express, {Application} from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 
-import clients from './routes/clientsroute'
+import indexRoutes from './routes/indexRoute';
+import clients from './routes/clientsRoute'
 
-import lotes from './routes/lotesroute'
+import lotes from './routes/lotesRoute'
 
 
 class Server {
-    public app: Application;
-    constructor(){
 
+    public app: Application;
+
+    constructor(){
         this.app = express();
         this.config();
         this.routes();
@@ -25,6 +27,7 @@ class Server {
     }
 
     routes(): void{
+        this.app.use(indexRoutes);
         this.app.use('/register/cliente',clients);
         this.app.use('/lotes',lotes)
     }
@@ -35,6 +38,7 @@ class Server {
         });
     }
 }
+
 
 const server = new Server();
 server.start();

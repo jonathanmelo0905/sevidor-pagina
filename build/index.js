@@ -6,8 +6,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
-const clientsroute_1 = __importDefault(require("./routes/clientsroute"));
-const lotesroute_1 = __importDefault(require("./routes/lotesroute"));
+const indexRoute_1 = __importDefault(require("./routes/indexRoute"));
+const clientsRoute_1 = __importDefault(require("./routes/clientsRoute"));
+const lotesRoute_1 = __importDefault(require("./routes/lotesRoute"));
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -22,8 +23,9 @@ class Server {
         this.app.use(express_1.default.urlencoded({ extended: false }));
     }
     routes() {
-        this.app.use('/register/cliente', clientsroute_1.default);
-        this.app.use('/lotes', lotesroute_1.default);
+        this.app.use(indexRoute_1.default);
+        this.app.use('/register/cliente', clientsRoute_1.default);
+        this.app.use('/lotes', lotesRoute_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

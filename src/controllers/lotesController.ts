@@ -15,7 +15,7 @@ class LotesController{
         const {precio} = req.params;
         
         const ida = area === "1" ? 300 : area === "2" ? 400 : 600 ;
-        const idu = ubicacion === "1" ? 'norte' : 'sur';
+        const idu = ubicacion;
         const idp = precio === "1" ? 300 : precio === "2" ? 400 : 600;        
 
         const lotes = (await pool).query('SELECT * FROM info_lotes WHERE area <= ? AND precio <= ? AND ubicacion = ?', [ida,idp,idu]);
