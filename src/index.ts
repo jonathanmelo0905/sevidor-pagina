@@ -9,17 +9,17 @@ import lotes from './routes/lotesRoute'
 
 
 class Server {
-
     public app: Application;
-
     constructor(){
+
         this.app = express();
         this.config();
         this.routes();
     }
 
+
     config(): void{
-        this.app.set('port',process.env.PORT || 80);
+        this.app.set('port',3000);
         this.app.use(morgan('dev'));
         this.app.use(cors());
         this.app.use(express.json());
