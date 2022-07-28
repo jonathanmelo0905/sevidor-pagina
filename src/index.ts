@@ -2,7 +2,7 @@ import express, {Application} from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 
-import indexRoutes from './routes/indexRoute';
+import indexRoutes from '../src/routes/indexRoute';
 import clients from './routes/clientsRoute'
 
 import lotes from './routes/lotesRoute'

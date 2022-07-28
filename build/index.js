@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
-const indexRoute_1 = __importDefault(require("./routes/indexRoute"));
+const indexRoute_1 = __importDefault(require("../src/routes/indexRoute"));
 const clientsRoute_1 = __importDefault(require("./routes/clientsRoute"));
 const lotesRoute_1 = __importDefault(require("./routes/lotesRoute"));
 class Server {
