@@ -7,7 +7,7 @@ const express_1 = __importDefault(require("express"));
 const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
 //import indexRoutes from "./routes/indexRoute";
-//import clients from './routes/clientsRoute'
+const clientsRoute_1 = __importDefault(require("./routes/clientsRoute"));
 const lotesRoute_1 = __importDefault(require("./routes/lotesRoute"));
 class Server {
     constructor() {
@@ -24,7 +24,7 @@ class Server {
     }
     routes() {
         //this.app.use(indexRoutes);
-        //this.app.use('/register/cliente',clients);
+        this.app.use('/cliente', clientsRoute_1.default);
         this.app.use('/lotes', lotesRoute_1.default);
     }
     start() {

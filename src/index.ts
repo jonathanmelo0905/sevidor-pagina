@@ -28,6 +28,7 @@ class Server {
 
     routes(): void{
         //this.app.use(indexRoutes);
+        
         this.app.use('/cliente',clients);
         this.app.use('/lotes',lotes);
     }
