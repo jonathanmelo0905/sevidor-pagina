@@ -3,7 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 
 //import indexRoutes from "./routes/indexRoute";
-//import clients from './routes/clientsRoute'
+import clients from './routes/clientsRoute'
 
 import lotes from './routes/lotesRoute'
 
@@ -28,7 +28,7 @@ class Server {
 
     routes(): void{
         //this.app.use(indexRoutes);
-        //this.app.use('/register/cliente',clients);
+        this.app.use('/cliente',clients);
         this.app.use('/lotes',lotes);
     }
 
