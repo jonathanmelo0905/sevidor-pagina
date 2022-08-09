@@ -6,6 +6,7 @@ import cors from 'cors';
 import clients from './routes/clientsRoute'
 
 import lotes from './routes/lotesRoute'
+import mailRoute from './routes/mailRoute';
 
 
 class Server {
@@ -28,7 +29,7 @@ class Server {
 
     routes(): void{
         //this.app.use(indexRoutes);
-        
+        this.app.use('/correo',mailRoute)
         this.app.use('/cliente',clients);
         this.app.use('/lotes',lotes);
     }

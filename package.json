@@ -12,6 +12,7 @@
   "author": "jonathan melo",
   "license": "ISC",
   "dependencies": {
+    "@types/nodemailer": "^6.4.5",
     "cors": "^2.8.5",
     "express": "^4.18.1",
     "morgan": "^1.10.0",
