@@ -31,7 +31,7 @@ class HoraController {
     createdHora(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             console.log(req.body);
-            (yield database_1.default).query('INSERT INTO registro_entrada_salida set ?', [req.body]);
+            (yield database_1.default).query('INSERT INTO hora set ?', [req.body]);
             res.json({ Text: 'trabajador registrado' });
         });
     }

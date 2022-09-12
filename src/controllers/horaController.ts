@@ -19,7 +19,7 @@ class HoraController{
 
     public async createdHora(req: Request, res: Response){
         console.log(req.body);
-        (await pool).query('INSERT INTO registro_entrada_salida set ?', [req.body]);
+        (await pool).query('INSERT INTO hora set ?', [req.body]);
         res.json({Text: 'trabajador registrado'});
     }
 
