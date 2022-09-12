@@ -10,6 +10,9 @@ const cors_1 = __importDefault(require("cors"));
 const clientsRoute_1 = __importDefault(require("./routes/clientsRoute"));
 const lotesRoute_1 = __importDefault(require("./routes/lotesRoute"));
 const mailRoute_1 = __importDefault(require("./routes/mailRoute"));
+const saludRoute_1 = __importDefault(require("./routes/saludRoute"));
+const horaRoute_1 = __importDefault(require("./routes/horaRoute"));
+const trabajadoresRoute_1 = __importDefault(require("./routes/trabajadoresRoute"));
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -28,6 +31,10 @@ class Server {
         this.app.use('/correo', mailRoute_1.default);
         this.app.use('/cliente', clientsRoute_1.default);
         this.app.use('/lotes', lotesRoute_1.default);
+        this.app.use('/acceso', trabajadoresRoute_1.default);
+        this.app.use('/salud', saludRoute_1.default);
+        this.app.use('/registro', horaRoute_1.default);
+        //        this.app.use('/vehiculo', trabajadores);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {
