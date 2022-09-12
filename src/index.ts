@@ -7,6 +7,9 @@ import clients from './routes/clientsRoute'
 
 import lotes from './routes/lotesRoute'
 import mailRoute from './routes/mailRoute';
+import salud from './routes/saludRoute';
+import hora from './routes/horaRoute';
+import trabajadores from './routes/trabajadoresRoute'
 
 
 class Server {
@@ -32,6 +35,10 @@ class Server {
         this.app.use('/correo',mailRoute)
         this.app.use('/cliente',clients);
         this.app.use('/lotes',lotes);
+        this.app.use('/acceso', trabajadores);
+        this.app.use('/salud', salud);
+        this.app.use('/registro', hora);
+//        this.app.use('/vehiculo', trabajadores);
     }
 
     start(): void{
