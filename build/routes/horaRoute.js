@@ -11,7 +11,7 @@ class HoraRoutes {
         this.config();
     }
     config() {
-        // this.router.get('/', saludController.consultaSalud);
+        this.router.get('/', horaController_1.default.consultaRegistro);
         // this.router.get('/consulta/:cedula', saludController.consultaOneSalud);
         // this.router.post('/', trabajadorController.createdTrabajadores);
         this.router.post('/', horaController_1.default.createdHora);

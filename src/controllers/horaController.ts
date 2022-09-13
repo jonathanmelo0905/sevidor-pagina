@@ -4,8 +4,8 @@ import pool from "../database"
 
 class HoraController{
     
-    public async consultaSalud (req: Request, res: Response){
-        const clientes = (await pool).query('SELECT * FROM seguridads_social');
+    public async consultaRegistro (req: Request, res: Response){
+        const clientes = (await pool).query('SELECT * FROM registro_entrada_salida');
         res.json(await clientes);
     }
 

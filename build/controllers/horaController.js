@@ -14,9 +14,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
 class HoraController {
-    consultaSalud(req, res) {
+    consultaRegistro(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const clientes = (yield database_1.default).query('SELECT * FROM seguridads_social');
+            const clientes = (yield database_1.default).query('SELECT * FROM registro_entrada_salida');
             res.json(yield clientes);
         });
     }
