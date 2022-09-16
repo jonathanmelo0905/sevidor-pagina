@@ -22,12 +22,19 @@ class sendMail {
                     to: correo,
                     subject: "Soy Julian Cubillos",
                     text: "Hello world?",
-                    html: `<div>
-                <h1>Hola soy Julian Cubillos</h1>
-                <h2>Gracias por darme la oportunidad de conocerte</h2>
-                <h1>${nombre}</h1>
-                <h4>si quieres saber mas de mi aqui te dejo mis redes</h4>
-            </div>`, // html body
+                    html: `
+                <body class="container-correo">
+                        <h1>¡Hola Crack! 😄</h1>
+                        <p>Soy Julían Cubillos Trackfiquer experto en ADS, junto con nuestro equipo de trabajo tenemos las estrategias para escalar las ventas de tu negocio.</p>
+                        <p>La era digital de las redes sociales e internet NO es el futuro, es el presente y hoy por hoy podemos usar estos medios para crecer exponencialmente.</p>
+                        <p>Te garantizamos nuestro servicio, estamos llevando a empresas de Colombia, España y Estados Unidos a otro nivel.🔝</p>
+                        <p>Y muy seguro tu empresa puede ser una de ellas.😎</p>
+                        <p>Dale al boton y hablemos directamente. (Sin ningún compromiso)⬇️</p>
+                        <a class="enlace" target="_blank" href="https://wa.me/message/I4RVNWXJE4J2O1"><button class="boton">
+                            ¡Quiero saber mas de que se trata!
+                        </button></a>
+                        <h4>un abrazo.</h4>
+                </body>`, // html body
                 });
                 res.json({ ok: "correo enviado" });
             }
