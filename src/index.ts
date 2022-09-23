@@ -32,13 +32,13 @@ class Server {
 
     routes(): void{
         //this.app.use(indexRoutes);
-        this.app.use('/correo',mailRoute)
-        this.app.use('/cliente',clients);
-        this.app.use('/lotes',lotes);
-        this.app.use('/acceso', trabajadores);
-        this.app.use('/salud', salud);
-        this.app.use('/registro', hora);
-//        this.app.use('/vehiculo', trabajadores);
+        this.app.use('/habitat/correo',mailRoute)
+        this.app.use('/habitat/cliente',clients);
+        this.app.use('/habitat/lotes',lotes);
+        this.app.use('/habitat/acceso', trabajadores);
+        this.app.use('/habitat/salud', salud);
+        this.app.use('/habitat/registro', hora);
+        this.app.use('/habitat/vehiculo', trabajadores);
     }
 
     start(): void{

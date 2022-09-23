@@ -28,13 +28,13 @@ class Server {
     }
     routes() {
         //this.app.use(indexRoutes);
-        this.app.use('/correo', mailRoute_1.default);
-        this.app.use('/cliente', clientsRoute_1.default);
-        this.app.use('/lotes', lotesRoute_1.default);
-        this.app.use('/acceso', trabajadoresRoute_1.default);
-        this.app.use('/salud', saludRoute_1.default);
-        this.app.use('/registro', horaRoute_1.default);
-        //        this.app.use('/vehiculo', trabajadores);
+        this.app.use('/habitat/correo', mailRoute_1.default);
+        this.app.use('/habitat/cliente', clientsRoute_1.default);
+        this.app.use('/habitat/lotes', lotesRoute_1.default);
+        this.app.use('/habitat/acceso', trabajadoresRoute_1.default);
+        this.app.use('/habitat/salud', saludRoute_1.default);
+        this.app.use('/habitat/registro', horaRoute_1.default);
+        this.app.use('/habitat/vehiculo', trabajadoresRoute_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {
