@@ -11,9 +11,8 @@ class sendMail{
         const correo = req.body.correo;
         const apartamento = req.body.apartamento;
         const apttexto2 = req.body.apttexto2;
-
-
-
+        const nombre = req.body.nombre;
+        const genero = req.body.genero;
 
         if(seleccion === 1){
             try {
@@ -23,8 +22,8 @@ class sendMail{
                     subject: "Información Apartamentos Nissi Condominio Campestre, Villeta", // Subject line
                     text: "Hello world?", // plain text body
                     html: `
-                    <div class="correo" style="display: grid; padding: 20px; text-align: justify;">
-                    <p>Apreciado <b>Cliente,</b></p>
+                    <div class="correo" style="display: grid; padding: 10px 0; text-align: justify;font-size: small;">
+                    <p>${genero} <b>${nombre},</b></p>
                     <p>Reciba un cordial saludo de parte del equipo comercial de Nissi Condominio Campestre Villeta.</p>
                     <p>Nissi Condominio Campestre está ubicado en el corazón de Villeta, en el eje de mayor desarrollo urbanístico y de gran proyección de valorización.</p>
                     <p>Nos alegra presentarle nuestro hermoso proyecto de Apartamentos Campestres en Villeta y brindarle toda la información para que asegure un lugar en este, el mejor proyecto de la región.</p>
@@ -59,9 +58,9 @@ class sendMail{
                     <p>
                         Ubicación del proyecto:
                     </p>
-                    <div style="display: grid; width: 100%; justify-content: center;padding: 10px 0;">
+                    <div>
                         <a href="https://www.google.com/maps/place/Nissi+Condominio+Campestre/@5.0139966,-74.4686356,17z/data=!4m5!3m4!1s0x8e409a4234bbe347:0xef9f49b2b97435c6!8m2!3d5.014234!4d-74.468981?hl=es">
-                            <img style="width: 200px; height: max-content;" src="https://fotos-habitat.s3.amazonaws.com/ubiacion.png" alt="">
+                            <img style="display: block; max-width: 200px;border-radius: 20px;" src="https://fotos-habitat.s3.amazonaws.com/Nissi+Maps.png" alt="">
                         </a>
                     </div>
                     <p>
@@ -69,9 +68,9 @@ class sendMail{
                         tenga la oportunidad de conocer cada detalle del proyecto y pueda separar su propiedad con un precio diferencial.
                     </p>
                     <p>Agende su cita virtual dando click aquí:</p>
-                    <div style="display: grid; width: 100%; justify-content: center; padding: 10px 0;">
+                    <div>
                         <a href="https://habitatconstructores.co/showroom/">
-                            <img style="display: block; width: 300px; height: max-content;" src="https://fotos-habitat.s3.amazonaws.com/citas-online.png" alt="">
+                            <img style="display: block; max-width: 300px; border-radius: 20px;" src="https://fotos-habitat.s3.amazonaws.com/Banner+Horizontal+Descuentos+Emprendimiento+Deco+Femenino+lila+rosa+negro.png" alt="">
                         </a>
                     </div>
                     <p>
@@ -83,16 +82,26 @@ class sendMail{
                     <p>
                         Cordialmente,
                     </p>
-                    <div style="display: flex; width: 100%; gap: 20px;">
-                    <img style="width: 150px; height: 120px;" src="https://fotos-habitat.s3.amazonaws.com/logohabitat.png" alt="logo-habitat-constructores">
-                    <div style="display: grid; gap: 2px;">
-                        <b style="color: red;  margin: 0;">Ana González</b>
-                        <p style="margin: 0;">Asesora  Comercial</p>
-                        <p style="margin: 0;">HABITAT CONSTRUCTORES S.A</p>
-                        <p style="margin: 0;"><b style="color: red;  padding: 0;">m:</b>321 438 0764</p>
-                        <p style="margin: 0;"><b style="color: red;  padding: 0;">a:</b>Villeta, Colombia</p>
-                        <p style="margin: 0;"><b style="color: red;  padding: 0;">w:</b>info@habitatconstructores.com</p>
-                    </div>
+                    <div style="display: flex; width: 100%; gap: 2px; font-size: x-small;">
+                        <div>
+                            <img style="display: block; max-width: 150px; min-width: 50px; margin: 0 auto;" src="https://fotos-habitat.s3.amazonaws.com/logohabitat2-removebg-preview.png" alt="logo-habitat-constructores">
+                        </div>
+                        <div style="display: grid; gap: 0px; border-left:solid red 4px;margin: 0; padding: 0; padding-left: 5px; margin-left: 5px;">
+                            <b style="color: red;  margin: 0;">Ana González</b>
+                            <p style="margin: 0; padding: 0;">Asesora  Comercial</p>
+                            <p style="margin: 0; padding: 0;">HABITAT CONSTRUCTORES S.A</p>
+                            <p style="margin: 0; padding: 0;"><b style="color: red;  padding: 0;">m:</b>  321 438 0764</p>
+                            <p style="margin: 0; padding: 0;"><b style="color: red;  padding: 0;">a:</b>  Villeta, Colombia</p>
+                            <p style="margin: 0; padding: 0;"><b style="color: red;  padding: 0;">w:</b>  info@habitatconstructores.com</p>
+                            <div style="display: flex;">
+                                <a href="https://www.facebook.com/montesdelretiropayande">
+                                    <img style="display: block; max-width: 64px; min-width: 10px; margin: 0 auto;padding-right: 2px;" src="https://fotos-habitat.s3.amazonaws.com/logo_facebook.png" alt="">
+                                </a>
+                                <a href="https://www.instagram.com/accounts/login/?next=%2Fhabitatconstructores%2F">
+                                    <img style="display: block; max-width: 64px; min-width: 10px; margin: 0 auto; padding-left: 2px;" src="https://fotos-habitat.s3.amazonaws.com/logo_insta.png" alt="">
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                     `,
@@ -116,8 +125,8 @@ class sendMail{
                     subject: "Información Montes del Retiro Payandé", // Subject line
                     text: "Hello world?", // plain text body
                     html: `
-                    <div class="correo" style="display: grid; grid-template-columns: 100%; padding: 20px 0; text-align: justify;">
-                        <p>Apreciado <b>Cliente,</b></p>
+                    <div class="correo" style="display: grid; grid-template-columns: 100%; padding: 10px 0; text-align: justify;font-size: small;">
+                        <p>${genero} <b>${nombre},</b></p>
                         <p>
                             Reciba un cordial saludo de parte del equipo comercial de Montes del Retiro Payandé Villeta.
                         </p>
@@ -160,9 +169,9 @@ class sendMail{
                         <p>
                             Ubicación del proyecto:
                         </p>
-                        <div style="display: flex; width: 100%; padding: 10px 0;">
+                        <div>
                             <a href="https://www.google.com/maps/@5.0684533,-74.4468372,3a,75y,125.11h,89.89t/data=!3m6!1e1!3m4!1s-HOBzzpaWiEJ0tdIf7qmIQ!2e0!7i13312!8i6656">
-                                <img style="display: flex; width: 60%; height: max-content; margin: 0 auto;" src="https://fotos-habitat.s3.amazonaws.com/ubiacion.png" alt="">
+                                <img style="display: block; max-width: 200px; border-radius: 20px;" src="https://fotos-habitat.s3.amazonaws.com/Montes+maps.JPG" alt="">
                             </a>
                         </div>
                         <p>
@@ -173,9 +182,9 @@ class sendMail{
                             tenga la oportunidad de conocer cada detalle del proyecto y pueda separar su propiedad con un precio diferencial.
                         </p>
                         <p>Agende su cita virtual dando click aquí:</p>
-                        <div style="display: flex; width: 100%; padding: 10px 0;">
+                        <div>
                             <a href="https://habitatconstructores.co/showroom/">
-                                <img style="display: flex; width: 70%; height: max-content; margin: 0 auto;" src="https://fotos-habitat.s3.amazonaws.com/citas-online.png" alt="">
+                                <img style="display: block; max-width: 300px; border-radius: 20px;" src="https://fotos-habitat.s3.amazonaws.com/Banner+Horizontal+Descuentos+Emprendimiento+Deco+Femenino+lila+rosa+negro.png" alt="">
                             </a>
                         </div>
                         <p>
@@ -187,18 +196,29 @@ class sendMail{
                         <p>
                             Cordialmente,
                         </p>
-
-                        <div style="display: flex; width: 100%; gap: 20px;">
-                            <img style="width: 150px; height: 120px;" src="https://fotos-habitat.s3.amazonaws.com/logohabitat.png" alt="logo-habitat-constructores">
-                            <div style="display: grid; gap: 2px;">
+                        <div style="display: flex; width: 100%; gap: 2px; font-size: x-small;">
+                            <div>
+                                <img style="display: block; max-width: 150px; min-width: 50px; margin: 0 auto;" src="https://fotos-habitat.s3.amazonaws.com/logohabitat2-removebg-preview.png" alt="logo-habitat-constructores">
+                            </div>
+                            <div style="display: grid; gap: 0px; border-left:solid red 4px;margin: 0; padding: 0; padding-left: 5px; margin-left: 5px;">
                                 <b style="color: red;  margin: 0;">Ana González</b>
-                                <p style="margin: 0;">Asesora  Comercial</p>
-                                <p style="margin: 0;">HABITAT CONSTRUCTORES S.A</p>
-                                <p style="margin: 0;"><b style="color: red;  padding: 0;">m:</b>  321 438 0764</p>
-                                <p style="margin: 0;"><b style="color: red;  padding: 0;">a:</b>  Villeta, Colombia</p>
-                                <p style="margin: 0;"><b style="color: red;  padding: 0;">w:</b>  info@habitatconstructores.com</p>
+                                <p style="margin: 0; padding: 0;">Asesora  Comercial</p>
+                                <p style="margin: 0; padding: 0;">HABITAT CONSTRUCTORES S.A</p>
+                                <p style="margin: 0; padding: 0;"><b style="color: red;  padding: 0;">m:</b>  321 438 0764</p>
+                                <p style="margin: 0; padding: 0;"><b style="color: red;  padding: 0;">a:</b>  Villeta, Colombia</p>
+                                <p style="margin: 0; padding: 0;"><b style="color: red;  padding: 0;">w:</b>  info@habitatconstructores.com</p>
+                                <div style="display: flex;">
+                                    <a href="https://www.facebook.com/montesdelretiropayande">
+                                        <img style="display: block; max-width: 64px; min-width: 10px; margin: 0 auto;padding-right: 2px;" src="https://fotos-habitat.s3.amazonaws.com/logo_facebook.png" alt="">
+                                    </a>
+                                    <a href="https://www.instagram.com/accounts/login/?next=%2Fhabitatconstructores%2F">
+                                        <img style="display: block; max-width: 64px; min-width: 10px; margin: 0 auto; padding-left: 2px;" src="https://fotos-habitat.s3.amazonaws.com/logo_insta.png" alt="">
+                                    </a>
+                                </div>
                             </div>
                         </div>
+
+
                     </div>
                     `,
                 attachments: [
@@ -221,8 +241,8 @@ class sendMail{
                     subject: "Información Casa 7- Nissi Condominio Campestre, Villeta", // Subject line
                     text: "Hello world?", // plain text body
                     html: `
-                    <div class="correo" style="display: grid; grid-template-columns: 100%; padding: 20px 0; text-align: justify;">
-                    <p>Apreciado <b>Cliente,</b></p>
+                    <div class="correo" style="display: grid; grid-template-columns: 100%; padding: 10px 0; text-align: justify;font-size: small;">
+                    <p>${genero} <b>${nombre},</b></p>
                     <p>
                         Reciba un cordial saludo de parte del equipo comercial de Hábitat Constructores S.A.
                     </p>
@@ -266,9 +286,9 @@ class sendMail{
                     <p>Sin más que agregar le hago la invitación especial para que ahora mismo, pueda agendar una cita en nuestro Showroom Online y así, tenga la oportunidad de conocer cada detalle de esta hermosa casa y de esta manera podamos responder a sus dudas o inquietudes.</p>
                     
                     <p>Agende su cita virtual dando click aquí:</p>
-                    <div style="display: grid; width: 100%; justify-content: center; padding: 10px 0;">
+                    <div>
                         <a href="https://habitatconstructores.co/showroom/">
-                            <img style="display: display; width: 80%; height: max-content; margin: 0 auto;" src="https://fotos-habitat.s3.amazonaws.com/citas-online.png" alt="">
+                            <img style="display: block; max-width: 300px; border-radius: 20px;" src="https://fotos-habitat.s3.amazonaws.com/Banner+Horizontal+Descuentos+Emprendimiento+Deco+Femenino+lila+rosa+negro.png">
                         </a>
                     </div>
                     <p>
@@ -281,17 +301,29 @@ class sendMail{
                         Cordialmente,
                     </p>
 
-                    <div style="display: flex; width: 100%; gap: 20px;">
-                        <img style="width: 150px; height: 120px;" src="https://fotos-habitat.s3.amazonaws.com/logohabitat.png" alt="logo-habitat-constructores">
-                        <div style="display: grid; gap: 2px;">
+                    <div style="display: flex; width: 100%; gap: 2px; font-size: x-small;">
+                        <div>
+                            <img style="display: block; max-width: 150px; min-width: 50px; margin: 0 auto;" src="https://fotos-habitat.s3.amazonaws.com/logohabitat2-removebg-preview.png" alt="logo-habitat-constructores">
+                        </div>
+                        <div style="display: grid; gap: 0px; border-left:solid red 4px;margin: 0; padding: 0; padding-left: 5px; margin-left: 5px;">
                             <b style="color: red;  margin: 0;">Ana González</b>
-                            <p style="margin: 0;">Asesora  Comercial</p>
-                            <p style="margin: 0;">HABITAT CONSTRUCTORES S.A</p>
-                            <p style="margin: 0;"><b style="color: red;  padding: 0;">m:</b>  321 438 0764</p>
-                            <p style="margin: 0;"><b style="color: red;  padding: 0;">a:</b>  Villeta, Colombia</p>
-                            <p style="margin: 0;"><b style="color: red;  padding: 0;">w:</b>  info@habitatconstructores.com</p>
+                            <p style="margin: 0; padding: 0;">Asesora  Comercial</p>
+                            <p style="margin: 0; padding: 0;">HABITAT CONSTRUCTORES S.A</p>
+                            <p style="margin: 0; padding: 0;"><b style="color: red;  padding: 0;">m:</b>  321 438 0764</p>
+                            <p style="margin: 0; padding: 0;"><b style="color: red;  padding: 0;">a:</b>  Villeta, Colombia</p>
+                            <p style="margin: 0; padding: 0;"><b style="color: red;  padding: 0;">w:</b>  info@habitatconstructores.com</p>
+                            <div style="display: flex;">
+                                <a href="https://www.facebook.com/montesdelretiropayande">
+                                    <img style="display: block; max-width: 64px; min-width: 10px; margin: 0 auto;padding-right: 2px;" src="https://fotos-habitat.s3.amazonaws.com/logo_facebook.png" alt="">
+                                </a>
+                                <a href="https://www.instagram.com/accounts/login/?next=%2Fhabitatconstructores%2F">
+                                    <img style="display: block; max-width: 64px; min-width: 10px; margin: 0 auto; padding-left: 2px;" src="https://fotos-habitat.s3.amazonaws.com/logo_insta.png" alt="">
+                                </a>
+                            </div>
                         </div>
                     </div>
+
+
                 </div>
                     `,
                 attachments: [
@@ -304,6 +336,7 @@ class sendMail{
                 });
                 res.json({ok: "correo enviado"})
             } catch (error) {
+                res.json({faile: "correo no enviado"})
                 console.log(error);
             }
         }
